@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Institutions</h1>
+<ul>
+    {% for institution in institutions %}
+        <li><a href="/{{ institution.abbr }}">{{ institution.abbr|title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

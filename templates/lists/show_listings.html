@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome to Netisell - {{ institution|title }} - {{ category.category|title }} - {{ subcategory.subcategory|title }}</h2>
+<ul>
+    {% for listing in listings %}
+        <li><a href="/listing/{{ listing.id }}/{{ listing.slug }}">{{ listing.title|title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

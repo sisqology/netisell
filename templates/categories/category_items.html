@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for subcategory in subcategories %}
+    <p><a href="{{ subcategory.subcategory }}">{{ subcategory.subcategory }}</a></p>
+{% endfor %}
+
+{% for listing in listings %}
+    <p>{{ listing }}</p>
+{% endfor %}
+{% endblock %}

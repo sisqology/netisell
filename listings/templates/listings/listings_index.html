@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+    {{ category }}
+{% for listing in listings %}
+    <p><a href="/{{ institution.abbr }}/{{ section_slug }}/{{ listing.id }}/{{ listing.slug }}">{{ listing.title }}</a></p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'post_discussion_topic_link.html' %}
+    <h1>{{ category.name|title }} Topics</h1>
+    <h1>Topics</h1>
+    {% for discussion in discussions %}
+        <p><a href="/{{ institution.abbr }}/topic/{{ discussion.id }}/{{ discussion.slug }}">{{ discussion.title|title }}</a></p>
+    {% endfor %}
+{% endblock %}

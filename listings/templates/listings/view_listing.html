@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<p><b>{{ listing.title }}</b></p>
+
+<p>{% if listing.price %}{{ listing.price }}{% else %}Free{% endif %}</p>
+{% if listing.condition %}<p>{{ listing.condition }}</p>{% endif %}
+{% if listing.negotiable %}<p>{{ listing.negotiable }}</p>{% endif %}
+<p>{{ listing.phone }}</p>
+<p>{{ listing.email }}</p>
+{% if listing.user %}<p>{{ listing.user }}</p>{% endif %}
+<p>{{ listing.area.institution }}</p>
+<p>{{ listing.area.name }}</p>
+<p>{{ listing.description }}</p>
+<p>{{ listing.date_posted }}</p>
+
+{% if listing.image1 %}<p><img src="{{ listing.small_image.url }}" /></p>{% endif %}
+{% if listing.image2 %}<p><img src="{{ MEDIA_URL }}{{ listing.image2 }}"/></p>{% endif %}
+{% if listing.image3 %}<p><img src="{{ MEDIA_URL }}{{ listing.image3 }}"/></p>{% endif %}
+{% if listing.image4 %}<p><img src="{{ MEDIA_URL }}{{ listing.image4 }}"/></p>{% endif %}
+{% endblock %}

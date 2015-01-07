@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'add_listing_button.html' %}
+<h1>{{ section }}</h1>
+{% for category in categories %}
+    <p><a href="{{ section_slug }}/{{ category.slug }}">{{ category.name }}</a></p>
+{% endfor %}
+{% for listing in listings %}
+    <p><a href="{{ section_slug }}/{{ listing.id }}/{{ listing.slug }}">{{ listing.title }}</a></p>
+{% endfor %}
+{% endblock %}

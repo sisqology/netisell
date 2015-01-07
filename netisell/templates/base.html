@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %}
+            Welcome to Netisell
+        {% endblock %}
+    </title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}ckeditor/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}ckeditor/ckeditor-init.js"></script>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </header>
+    {% if notification %}
+        {{ notification }}
+    {% endif %}
+    {%block content%}
+
+    {%endblock%}
+</body>
+</html>

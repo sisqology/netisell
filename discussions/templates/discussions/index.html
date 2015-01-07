@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Categories</h1>
+    {% for category in categories %}
+        <p><a href="discussions/{{ category.slug }}">{{ category.name|title }}</a></p>
+    {% endfor %}
+    <h1>Latest Topics</h1>
+    {% for discussion in latest_discussions %}
+        <p><a href="topic/{{ discussion.id }}/{{ discussion.slug }}">{{ discussion.title|title }}</a></p>
+    {% endfor %}
+{% endblock %}

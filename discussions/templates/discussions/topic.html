@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ topic.title|title }}</h1>
+    <p>{{ topic.title|title }} by {{ topic.user }}: {{ topic.date_created }}
+    <br/>{{ topic.topic_comment }}</p>
+
+
+
+{#    {{ now_true }}#}
+{#    {% now "F" %} {% now "Y" %}, {% now "Y" %}#}
+
+    {% for comment in comments %}
+        <p>Re: {{ topic.title|title }} by {{ comment.user.username }}: {{ comment.date_created|date:'M. j, Y g:i a' }}
+{#                {% if today ==  comment.date_created|date:'M. j, Y' %}#}
+{#                    <p>hiiii</p>#}
+{#                {% endif %}#}
+
+
+{#            <h1>{{ today }}</h1>#}
+{#            <h1>{{ comment.date_created|date:'M. j, Y' }}</h1>#}
+{#            {% if today == comment.date_created|date:'M. j, Y' %}#}
+{#            {{ comment.date_created|date:'g:i A' }}#}
+{#                hello#}
+{#            {% else %}#}
+{#            {{ comment.date_created|date:'F j, Y g:i A'}}#}
+{#                hi#}
+{#            {% endif %}#}
+{#            #TODO: check if working tomorrow#}
+            <br/>
+            {{ comment|safe }}</p>
+{#            <p>{{ today }}</p>#}
+{#            <p>{{ comment.date_created|date:'M. j, Y' }}</p>#}
+    {% endfor %}
+    <p><a href="/{{ institution.abbr }}/discussion/comment/?topic={{ topic.id }}">Reply</a></p>
+{% endblock %}

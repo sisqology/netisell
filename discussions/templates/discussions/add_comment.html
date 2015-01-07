@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ topic.title|title }}</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ comment_form.media }}
+        {{ comment_form.as_ul }}
+        <input type="submit" value="Post" />
+    </form>
+{% endblock %}
